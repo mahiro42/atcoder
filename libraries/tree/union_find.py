@@ -5,11 +5,11 @@ class UnionFind:
         self._parents = [i for i in range(n)]
 
     def get_parent(self, x):
-        """ノードxの親を求める関数"""
+        """ノードxの親を求めるメソッド"""
         return self._parents[x]
 
     def find_root(self, x):
-        """ノードxの根を求める関数"""
+        """ノードxの根を求めるメソッド"""
         if x == self.get_parent(x):
             return x
         else:
@@ -19,11 +19,11 @@ class UnionFind:
             return root
 
     def same_root(self, x, y):
-        """ノードxとyの根が同じかどうかを真偽値で返す関数"""
+        """ノードxとyの根が同じかどうかを真偽値で返すメソッド"""
         return self.find_root(x) == self.find_root(y)
 
     def unite(self, x, y):
-        """xとyの属する集合を併合して真を返す関数。既に同じ集合だった場合は偽を返す"""
+        """xとyの属する集合を併合して真を返すメソッド。既に同じ集合だった場合は偽を返す"""
         root_x = self.find_root(x)
         root_y = self.find_root(y)
         if x == y:
